@@ -5,7 +5,10 @@ class DMSDocumentExtension extends DataExtension {
 		
 		if($this->owner->ID) {
 			$srcTags = function(){
-				return DMSTag::get()->map('ID', 'Category')->toArray();
+				$tags = array();
+				foreach (DMSTag::get() as $t)
+					$tags[$t->ID] = $t->Category . ($t->Value != DMSTagExtension::$undefinedValue ? ' -> ' . $t->Value : '');
+				return $tags;
 			};
 
 			$selectTags = ListboxField::create(
@@ -16,13 +19,9 @@ class DMSDocumentExtension extends DataExtension {
 					null,
 					true
 				)->useAddNew('DMSTag', $srcTags, FieldList::create(
-					AjaxUniqueTextField::create(
-						'Category',
-						_t('DMSDocumentExtension.Category', 'Category'),
-						'Category',
-						'DMSTag'
-					),
-					HiddenField::create('MultiValue', null, 0)
+					TextField::create('Category', _t('DMSDocumentExtension.Category', 'Category *')),
+					TextField::create('Value', _t('DMSDocumentExtension.Value', 'Value')),
+					HiddenField::create('MultiValue', null, 1)
 			));
 
 			$fields->insertAfter($selectTags, 'Description');
@@ -32,14 +31,16 @@ class DMSDocumentExtension extends DataExtension {
 
 	public function onBeforeWrite() {
 		$changedFields = $this->owner->getChangedFields(false, 1);
+
 		if(array_key_exists("DocumentTags", $changedFields)) {
 			$currentTags = explode(',', $this->owner->getField('DocumentTags'));
-			$oldTags = DMSTag::get()->innerJoin("DMSDocument_Tags", "\"DMSDocument_Tags\".\"DMSTagID\" = \"DMSTag\".\"ID\" AND \"DMSDocument_Tags\".\"DMSDocumentID\" = " . $this->owner->ID)->column();
+			$oldTags = DMSTag::get()
+				->innerJoin("DMSDocument_Tags", "\"DMSDocument_Tags\".\"DMSTagID\" = \"DMSTag\".\"ID\" AND \"DMSDocument_Tags\".\"DMSDocumentID\" = " . $this->owner->ID)->column();
 			
 			// delete the tags
 			foreach(array_diff($oldTags, $currentTags) as $idTag){
 				$tag = DMSTag::get()->byID($idTag);
-				if($tag) $this->owner->removeTag($tag->Category);
+				if($tag) $this->owner->removeTag($tag->Category, $tag->Value ? $tag->Value : NULL);
 			}
 			// add the tags
 			foreach(array_diff($currentTags, $oldTags) as $idTag){

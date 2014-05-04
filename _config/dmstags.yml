@@ -4,3 +4,6 @@ name: dmstags
 DMSDocument:
   extensions:
    ['DMSDocumentExtension']
+DMSTag:
+  extensions:
+   ['DMSTagExtension']

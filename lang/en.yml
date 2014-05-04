@@ -1,0 +1,8 @@
+en:
+  DMSDocumentExtension:
+    Category: 'Category *'
+    Tags: Tags
+    Value: Value
+  DMSTagExtension:
+    CategoryValueNotUnique: 'This tag already exists. Please select it from the multiselect box.'
+    NoCategory: 'You must at least enter a category.'

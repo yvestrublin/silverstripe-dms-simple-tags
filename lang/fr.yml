@@ -1,0 +1,8 @@
+fr:
+  DMSDocumentExtension:
+    Category: 'Catégorie *'
+    Tags: Tags
+    Value: Valeur
+  DMSTagExtension:
+    CategoryValueNotUnique: 'Ce tag existe déjà. Veuillez le sélectionner depuis le champ à sélection multiple.'
+    NoCategory: 'La catégorie est obligatoire.'
