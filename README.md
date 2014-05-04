@@ -1,5 +1,5 @@
-DMS Simple Tags management
-==========================
+Silverstripe DMS Simple Tags management
+=======================================
 
 Simple tags management for the Document Management System (DMS)
 
@@ -14,4 +14,6 @@ Install with composer:
 - Add `"tubbs/dms-simple-tags": "dev-master"` to your composer.json file
 - Run `composer  update`
 - Run `sake dev/build flush=1`
-- That's it, you will now have a ListboxField to select multiple tags and an 'Add New' button in a DMSDocument form in the CMS.
+
+
+You will now have a ListboxField to select multiple tags and an 'Add New' button in a DMSDocument form in the CMS. There is also a checkbox to to show or hide tags in the frontend templates on a per-document basis.
