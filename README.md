@@ -11,7 +11,8 @@ Requirements:
 Install with composer:
 ----------------------
 
-Add `"tubbs/dms-simple-tags": "dev-master"` to your composer.json file.
-Run `composer  update`
-Run `sake dev/build flush=1`
+- Add `"tubbs/dms-simple-tags": "dev-master"` to your composer.json file.
+- Run `composer  update`
+- Run `sake dev/build flush=1`
+
 Done.
