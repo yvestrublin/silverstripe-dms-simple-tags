@@ -2,7 +2,7 @@
     "name": "tubbs/dms-simple-tags",
     "description": "Add Tags management to the Document Management System (DMS)",
     "type": "silverstripe-module",
-    "keywords": ["silverstripe", "dms", "document", "document management system", "tags"],
+    "keywords": ["silverstripe", "dms", "tags", "document", "document management system"],
     "license": "BSD-3-Clause",
     "authors": [{
         "name": "Yves Trublin",
