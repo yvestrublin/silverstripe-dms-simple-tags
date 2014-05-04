@@ -22,7 +22,7 @@ class DMSTagExtension extends DataExtension {
 			$query = "SELECT COUNT(*) FROM \"DMSTag\" WHERE \"DMSTag\".\"Category\" LIKE '{$this->owner->Category}' AND \"DMSTag\".\"Value\" LIKE '{$this->owner->Value}'";
 
 			if(DB::query($query)->value()) 
-				$validationResult->combineAnd(new ValidationResult(false, _t('DMSTagExtension.CategoryValueNotUnique', 'The category and value you try to create already exists.')));
+				$validationResult->combineAnd(new ValidationResult(false, _t('DMSTagExtension.CategoryValueNotUnique', 'This tag already exists. Please select it from the multiselect box.')));
 
 		}
 	}

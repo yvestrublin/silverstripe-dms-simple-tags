@@ -1,6 +1,7 @@
 en:
   DMSDocumentExtension:
     Category: 'Category *'
+    ShowTagsFrontend: 'Show document tags in frontend?'
     Tags: Tags
     Value: Value
   DMSTagExtension:

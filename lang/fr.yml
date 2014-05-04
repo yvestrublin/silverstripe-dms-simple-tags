@@ -1,6 +1,7 @@
 fr:
   DMSDocumentExtension:
     Category: 'Catégorie *'
+    ShowTagsFrontend: 'Montrer les tags du document sur le site public&nbsp;?'
     Tags: Tags
     Value: Valeur
   DMSTagExtension:
