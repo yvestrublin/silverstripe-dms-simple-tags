@@ -4,8 +4,6 @@ class DMSDocumentExtension extends DataExtension {
 	public function updateCMSFields(FieldList $fields) {
 		
 		if($this->owner->ID) {
-			// Requirements::css('app/css/quickaddnewAdmin.css');
-
 			$srcTags = function(){
 				return DMSTag::get()->map('ID', 'Category')->toArray();
 			};
