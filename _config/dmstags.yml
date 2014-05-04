@@ -1,0 +1,6 @@
+---
+name: dmstags
+---
+DMSDocument:
+  extensions:
+   ['DMSDocumentExtension']
