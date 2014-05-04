@@ -7,3 +7,11 @@ Requirements:
 - Silverstripe 3.0+
 - Silverstripe DMS (https://github.com/silverstripe-labs/silverstripe-dms)
 - Silverstripe Quickaddnew (https://github.com/sheadawson/silverstripe-quickaddnew)
+
+Install with composer:
+----------------------
+
+Add `"tubbs/dms-simple-tags": "dev-master"` to your composer.json file.
+Run `composer  update`
+Run `sake dev/build flush=1`
+Done.
