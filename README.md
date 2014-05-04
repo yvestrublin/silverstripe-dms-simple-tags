@@ -16,4 +16,4 @@ Install with composer:
 - Run `sake dev/build flush=1`
 
 
-You will now have a ListboxField to select multiple tags and an 'Add New' button in a DMSDocument form in the CMS. There is also a checkbox to to show or hide tags in the frontend templates on a per-document basis.
+You will now have a ListboxField to select multiple tags and an 'Add New' button in a DMSDocument form in the CMS. There is also a checkbox to show or hide tags in the frontend templates on a per-document basis.
