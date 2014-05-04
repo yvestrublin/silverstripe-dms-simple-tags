@@ -1,13 +1,17 @@
 <?php
 class DMSDocumentExtension extends DataExtension {
 	
+	public static $db = array(
+		'ShowTagsFrontend' => 'Boolean(0)',
+	);
+
 	public function updateCMSFields(FieldList $fields) {
 		
 		if($this->owner->ID) {
 			$srcTags = function(){
 				$tags = array();
 				foreach (DMSTag::get() as $t)
-					$tags[$t->ID] = $t->Category . ($t->Value != DMSTagExtension::$undefinedValue ? ' -> ' . $t->Value : '');
+					$tags[$t->ID] = $t->Category . ($t->isValueDefined() ? ' -> ' . $t->Value : '');
 				return $tags;
 			};
 
@@ -25,6 +29,8 @@ class DMSDocumentExtension extends DataExtension {
 			));
 
 			$fields->insertAfter($selectTags, 'Description');
+
+			$fields->insertAfter(CheckboxField::create('ShowTagsFrontend', _t('DMSDocumentExtension.ShowTagsFrontend', 'Show document tags in frontend?')), 'DocumentTags');
 		}
 
 	}

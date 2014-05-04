@@ -4,6 +4,11 @@ class DMSTagExtension extends DataExtension {
 	
 	public static $undefinedValue = '#undefinedValue#';
 
+	public function isValueDefined() {
+		if($this->owner->Value != self::$undefinedValue) return true;
+		return false;
+	}
+
 	public function validate(ValidationResult $validationResult) {
 		if(!$this->owner->Category)
 			$validationResult->combineAnd(new ValidationResult(false, _t('DMSTagExtension.NoCategory', 'You must at least enter a category.')));
