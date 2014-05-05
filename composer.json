@@ -1,5 +1,5 @@
 {
-    "name": "tubbs/dms-simple-tags",
+    "name": "tubbs/silverstripe-dms-simple-tags",
     "description": "Add Tags management to the Document Management System (DMS)",
     "type": "silverstripe-module",
     "keywords": ["silverstripe", "dms", "tags", "document", "document management system"],
@@ -9,8 +9,8 @@
         "email": "yvestrublin@gmail.com"
     }],
     "require": {
-        "silverstripe/framework": "~3.1",
-        "silverstripe/cms": "~3.1",
+        "silverstripe/framework": "~3.0",
+        "silverstripe/cms": "~3.0",
         "sheadawson/quickaddnew": "dev-master"
     },
     "minimum-stability": "dev"
