@@ -9,8 +9,8 @@
         "email": "yvestrublin@gmail.com"
     }],
     "require": {
-        "silverstripe/framework": "~3.0",
-        "silverstripe/cms": "~3.0",
+        "silverstripe/framework": "~3.1",
+        "silverstripe/cms": "~3.1",
         "sheadawson/quickaddnew": "dev-master"
     },
     "minimum-stability": "dev"
